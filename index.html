@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>フランカー課題 (Flanker Task)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .task {
+            margin: 20px;
+            font-size: 24px;
+        }
+
+        #fixation p, #stimulus p {
+            font-size: 48px;
+            letter-spacing: 10px;
+        }
+
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>フランカー課題 (Flanker Task)</h1>
+
+    <!-- Participant ID Input -->
+    <div id="participant-id-section" class="task">
+        <label for="participant-id">参加者IDを入力してください:</label>
+        <input type="text" id="participant-id" required>
+        <button onclick="showInstructions()">次へ</button>
+    </div>
+
+    <!-- Instructions -->
+    <div id="instructions" class="task" style="display: none;">
+        <!-- Instructions will be added here -->
+    </div>
+
+    <!-- Fixation Cross -->
+    <div id="fixation" class="task" style="display: none;">
+        <p>+</p>
+    </div>
+
+    <!-- Stimulus Display -->
+    <div id="stimulus" class="task" style="display: none;">
+        <p id="stimulus-text"></p>
+    </div>
+
+    <!-- Feedback -->
+    <div id="feedback" class="task" style="display: none;">
+        <p id="feedback-text"></p>
+    </div>
+
+    <!-- Completion Message -->
+    <div id="completion" class="task" style="display: none;">
+        <p>課題が終了しました。お疲れ様でした！</p>
+        <button onclick="downloadData()">結果をダウンロード</button>
+    </div>
+
+    <script src="flanker.js"></script>
+</body>
+</html>
